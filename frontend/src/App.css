@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .sidebar {
   height: 100%;
   position: fixed;
@@ -49,5 +54,15 @@
 #ProductPage_item_wrapper #item #item_info {
   border: 1px solid black;
   display: flex;
+  justify-content: space-between;
+}
+
+#card_bottom {
+  /*  border: 1px solid black;
+  display: flex;*/
+  /*justify-content: flex-end;*/
+}
+
+.MuiGrid-container {
   justify-content: space-between;
 }

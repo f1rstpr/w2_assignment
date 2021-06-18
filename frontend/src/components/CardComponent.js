@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -7,19 +8,26 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 350,
-    margin: 20,
-  },
-});
+import HomeIcon from "@material-ui/icons/Home";
+import Grid from "@material-ui/core/Grid";
 
 export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
-  const classes = useStyles();
+  const useStyles = makeStyles({
+    root: {
+      maxWidth: 350,
+      margin: 20,
+    },
+    biggerStyle: {
+      minWidth: 500,
+      height: "100%",
+      margin: 20,
+    },
+  });
 
+  const classes = useStyles();
+  // className={classes.root}
   return (
-    <Card className={classes.root}>
+    <Card className={isOnProductPage ? classes.biggerStyle : classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -28,22 +36,43 @@ export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
           image={`${p.image}`}
           title={`${p.name}`}
         />
-        <CardContent
-          style={{ backgroundColor: "lightblue" }}
-          onClick={isOnProductPage ? () => handleAddToCart(p) : undefined}
-        >
+        <CardContent style={{ backgroundColor: "lightblue" }}>
           <Typography gutterBottom variant="h5" component="h2">
             {p.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="h3">
             ${p.price}
           </Typography>
+          {isOnProductPage ? (
+            <Typography variant="body2" color="textSecondary" component="h3">
+              {p.description}
+            </Typography>
+          ) : (
+            ""
+          )}
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        {!isOnProductPage ? (
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        ) : (
+          <Grid container direction="row" alignItems="center">
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => handleAddToCart(p)}
+            >
+              Add to Cart
+            </Button>
+            <Link to="/">
+              <Button size="small" color="primary">
+                <HomeIcon />
+              </Button>
+            </Link>
+          </Grid>
+        )}
       </CardActions>
     </Card>
   );

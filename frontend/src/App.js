@@ -65,7 +65,7 @@ function App() {
           ...prev,
           [itemName]: {
             quantity: prev[itemName].quantity + parseFloat(1),
-            unitPrice: parseInt(p.price),
+            unitPrice: parseFloat(p.price),
           },
         };
       });

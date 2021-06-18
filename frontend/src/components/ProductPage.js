@@ -32,20 +32,8 @@ export default function ProductPage({ menuOpen, handleAddToCart }) {
                     p={product}
                     handleAddToCart={handleAddToCart}
                     isOnProductPage={true}
+                    menuOpen={menuOpen}
                 />
-                {/*<div id="item">
-                    <img id="item_img" src={`${product.image}`} />
-                    <div id="item_info">
-                        <div> {product.name}</div>
-                        <div>{product.category}</div>
-                        <div>{product.description}</div>
-                        <div>
-                            <button onClick={() => handleAddToCart(product)}>
-                                add
-                            </button>
-                        </div>
-                    </div>
-                </div>*/}
             </div>
         </div>
     );
