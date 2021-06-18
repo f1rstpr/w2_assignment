@@ -19,7 +19,6 @@ export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
     },
     biggerStyle: {
       minWidth: 500,
-      height: "100%",
       margin: 20,
     },
   });
