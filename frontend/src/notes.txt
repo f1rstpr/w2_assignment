@@ -1,0 +1,48 @@
+make post request on add btn
+
+
+
+for post request
+need to pass in an obj like this
+{
+  cart: { Bike: 2, Scooter: 3 },
+  userInfo: { name: 'SampleUser', email: 'user@user.com' }
+}
+
+but our cur obj is
+{
+  product: {
+    id: 1,
+    name: 'Rice Krispies',
+    category: 'food',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg',
+    source: 'https://en.wikipedia.org/wiki/Rice_Krispies_Treats',
+    description: 'Delicious corn-based rice grains melted together with marshmallows into a square-like shape.',
+    price: 0.99
+  }
+}
+
+{
+    cart: {
+
+    }
+}
+
+go pass cart state to the component where the table is
+
+make sure the api returns back correct data
+
+
+{
+  "cart": {
+    "name": "SampleUser",
+    "email": "user@user.com",
+    "totalCost": "29.00",
+    "cart": {
+      "Bike": {qty: 2, fixedPrice: #},
+      "Scooter": {qty: 1, fixedPrice: #}
+    }
+  }
+}
+
+array of objects

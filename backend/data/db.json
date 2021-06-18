@@ -1,0 +1,50 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Rice Krispies",
+      "category": "food",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/RKTsquares.jpg",
+      "source": "https://en.wikipedia.org/wiki/Rice_Krispies_Treats",
+      "description": "Delicious corn-based rice grains melted together with marshmallows into a square-like shape.",
+      "price": 0.99
+    },
+    {
+      "id": 2,
+      "name": "Flamin Hot Cheetos",
+      "category": "food",
+      "image": "https://static.openfoodfacts.org/images/products/896/400/009/0879/front_en.14.full.jpg",
+      "source": "https://world.openfoodfacts.org/cgi/product_image.pl?code=8964000090879&id=front_en",
+      "description": "No one knows what's in the powder that covers these snacks, but wow is it amazing!",
+      "price": 1.5
+    },
+    {
+      "id": 3,
+      "name": "Bike",
+      "category": "accessories",
+      "image": "https://api.creativecommons.engineering/v1/thumbs/f446bc6a-9c36-43bc-98ca-85f215616aa6",
+      "source": "https://api.creativecommons.engineering/v1/thumbs/f446bc6a-9c36-43bc-98ca-85f215616aa6",
+      "description": "desc",
+      "price": "10.00"
+    },
+    {
+      "id": 4,
+      "name": "Scooter",
+      "category": "accessories",
+      "image": "https://live.staticflickr.com/3257/2891128534_53cd06bb31.jpg",
+      "source": "https://live.staticflickr.com/3257/2891128534_53cd06bb31.jpg",
+      "description": "desc",
+      "price": "3.00"
+    },
+    {
+      "id": 5,
+      "name": "M&M",
+      "category": "food",
+      "image": "https://live.staticflickr.com/6033/6221031093_0fcd795f4b_b.jpg",
+      "source": "https://search.creativecommons.org/photos/0bd02149-70f3-4733-90a6-758df0d91667",
+      "description": "yoo",
+      "price": "5.00"
+    }
+  ],
+  "cart": []
+}
