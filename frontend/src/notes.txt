@@ -46,3 +46,8 @@ make sure the api returns back correct data
 }
 
 array of objects
+
+
+
+# submitting cart order
+should contain email, items, and quantity

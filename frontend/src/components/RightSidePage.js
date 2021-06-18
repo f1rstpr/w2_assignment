@@ -20,9 +20,9 @@ export default function RightSidePage({ menuOpen, toggleMenu, products }) {
       style={menuOpen ? { marginLeft: "30%" } : { marginLeft: "0%" }}
     >
       <div id="right_div1">
-        <button id="sidebar_open" onClick={toggleMenu}>
+       {/* <button id="sidebar_open" onClick={toggleMenu}>
           Cart
-        </button>
+        </button>*/}
         <Navbar
           handleOnInputChange={handleOnInputChange}
           filteredSearch={filteredSearch}

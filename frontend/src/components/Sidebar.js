@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
+import axios from "axios";
 
 export default function Sidebar({ menuOpen, toggleMenu, cartData }) {
-    // Object.keys(cartData.cart).map((item, i) => {
-    // console.log(item, cartData.cart[item]);
-    // });
-    // console.log(cartData.cart);
-    if (cartData.cart) {
-        console.log(cartData);
-    }
+    console.log(cartData.cart);
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+    });
 
-    const xdxd = "123";
+    const handleInputChange = (e) => {
+        console.log(e.target);
+        setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const handleOnSubmit = async () => {
+        // const res = await axios.post(`${}`)
+        // const newUser = {
+        //     form.name,
+        //     form.email
+        // }
+
+        // setForm({
+        //     name: "",
+        //     email: ""
+        // })
+    };
+
     return (
         <div
             className="sidebar"
             style={menuOpen ? { width: "25%" } : { width: "1%" }}
-            onClick={toggleMenu}
         >
             <div id="sidebar_close" onClick={toggleMenu}></div>
             <table className="table">
@@ -45,6 +60,24 @@ export default function Sidebar({ menuOpen, toggleMenu, cartData }) {
                 </tbody>
             </table>
             TOTAL COST: {cartData.totalCost}
+            <div>
+                <input
+                    name="name"
+                    type="text"
+                    placeholder="name"
+                    value={form.name}
+                    onChange={(e) => handleInputChange(e)}
+                />
+
+                <input
+                    name="email"
+                    type="text"
+                    placeholder="email"
+                    value={form.email}
+                    onChange={(e) => handleInputChange(e)}
+                />
+            </div>
+            <button onClick={handleOnSubmit}> submit </button>
         </div>
     );
 }

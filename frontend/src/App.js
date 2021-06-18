@@ -9,7 +9,6 @@ import Product from "./components/Product";
 import ProductPage from "./components/ProductPage";
 import RightSidePage from "./components/RightSidePage";
 
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [products, setProducts] = useState([]);
@@ -30,10 +29,10 @@ function App() {
     const fetchCart = async () => {
       const res = await axios.post("http://localhost:3001/store/cart", {
         cart: cart,
-        userInfo: {
-          name: "SampleUser",
-          email: "user@user.com",
-        },
+        // userInfo: {
+        // name: "SampleUser",
+        // email: "user@user.com",
+        // },
       });
       console.log(res.data.cart, "?ADNIAWDHNIOANDOAWNDIOAWINODOI");
       setCartData(res.data.cart);
@@ -76,7 +75,11 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Sidebar menuOpen={menuOpen} toggleMenu={toggleMenu} cartData={cartData} />;
+        <Sidebar
+          menuOpen={menuOpen}
+          toggleMenu={toggleMenu}
+          cartData={cartData}
+        />
         <Routes>
           <Route
             path="/"

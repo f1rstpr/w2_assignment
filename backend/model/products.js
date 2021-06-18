@@ -20,15 +20,15 @@ class Products {
             throw new BadRequestError("cart key not in request.body");
         }
 
-        if (!("userInfo" in cartObj)) {
-            throw new BadRequestError("userInfo key not in request.body");
-        }
+        // if (!("userInfo" in cartObj)) {
+        //     throw new BadRequestError("userInfo key not in request.body");
+        // }
 
-        if (!("name" in cartObj.userInfo) || !("email" in cartObj.userInfo)) {
-            throw new BadRequestError(
-                "name or email not in request.body.userInfo"
-            );
-        }
+        // if (!("name" in cartObj.userInfo) || !("email" in cartObj.userInfo)) {
+        //     throw new BadRequestError(
+        //         "name or email not in request.body.userInfo"
+        //     );
+        // }
 
         const products = await Products.getProducts();
         const cart = cartObj.cart;
@@ -45,8 +45,8 @@ class Products {
         }
 
         return {
-            name: cartObj.userInfo.name,
-            email: cartObj.userInfo.email,
+            // name: cartObj.userInfo.name,
+            // email: cartObj.userInfo.email,
             totalCost: totalCost.toFixed(2),
             cart: cart,
         };
@@ -56,6 +56,17 @@ class Products {
         const cart = storage.get("cart").value();
         return cart;
     }
+
+    static async orderSubmission(order) {
+        if (!order) {
+            throw new BadRequestError("There was no order.");
+        }
+
+        // const newCart = {
+            // ...order,
+        // };
+    }
+
     static order(obj) {
         //     if (!("cart" in obj)) {
         //         throw new BadRequestError("Cart key is not in request.body");
