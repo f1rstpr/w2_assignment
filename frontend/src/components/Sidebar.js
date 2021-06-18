@@ -20,7 +20,6 @@ export default function Sidebar({ menuOpen, toggleMenu, cartData }) {
         //     form.name,
         //     form.email
         // }
-
         // setForm({
         //     name: "",
         //     email: ""
@@ -31,8 +30,9 @@ export default function Sidebar({ menuOpen, toggleMenu, cartData }) {
         <div
             className="sidebar"
             style={menuOpen ? { width: "25%" } : { width: "1%" }}
+            onClick={toggleMenu}
         >
-            <div id="sidebar_close" onClick={toggleMenu}></div>
+            <div id="sidebar_close"></div>
             <table className="table">
                 <thead>
                     <tr id="tr">

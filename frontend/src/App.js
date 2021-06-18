@@ -97,6 +97,7 @@ function App() {
               <ProductPage
                 menuOpen={menuOpen}
                 handleAddToCart={handleAddToCart}
+                products={products}
               />
             }
           />

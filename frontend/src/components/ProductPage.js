@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import CardComponent from "./CardComponent";
 
 export default function ProductPage({ menuOpen, handleAddToCart }) {
     const { productId } = useParams();
@@ -27,7 +28,12 @@ export default function ProductPage({ menuOpen, handleAddToCart }) {
             }
         >
             <div id="ProductPage_item_wrapper">
-                <div id="item">
+                <CardComponent
+                    p={product}
+                    handleAddToCart={handleAddToCart}
+                    isOnProductPage={true}
+                />
+                {/*<div id="item">
                     <img id="item_img" src={`${product.image}`} />
                     <div id="item_info">
                         <div> {product.name}</div>
@@ -39,7 +45,7 @@ export default function ProductPage({ menuOpen, handleAddToCart }) {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
         </div>
     );

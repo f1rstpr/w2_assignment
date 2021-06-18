@@ -10,11 +10,12 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 350,
+    margin: 20,
   },
 });
 
-export default function CardComponent({ img }) {
+export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
   const classes = useStyles();
 
   return (
@@ -23,16 +24,19 @@ export default function CardComponent({ img }) {
         <CardMedia
           component="img"
           alt="Contemplative Reptile"
-          height="140"
-          image={`${img}`}
-          title="Contemplative Reptile"
+          height={isOnProductPage ? "500" : "300"}
+          image={`${p.image}`}
+          title={`${p.name}`}
         />
-        <CardContent>
+        <CardContent
+          style={{ backgroundColor: "lightblue" }}
+          onClick={isOnProductPage ? () => handleAddToCart(p) : undefined}
+        >
           <Typography gutterBottom variant="h5" component="h2">
-            Title
+            {p.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description or price here
+            ${p.price}
           </Typography>
         </CardContent>
       </CardActionArea>
