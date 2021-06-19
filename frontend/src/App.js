@@ -72,6 +72,23 @@ function App() {
     }
   };
 
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+  });
+  const [orderObj, setOrderObj] = useState({});
+  const [changed, setChanged] = useState(1);
+
+  useEffect(() => {
+    console.log(changed);
+    setOrderObj((prevState) => ({
+      ...prevState,
+      email: form.email,
+      items: { ...prevState.items, cartItem: cartData.cart },
+    }));
+  }, [form, changed]);
+  console.log(cartData.cart, "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<app.js");
+  console.log(changed);
   return (
     <div>
       <BrowserRouter>
@@ -79,6 +96,10 @@ function App() {
           menuOpen={menuOpen}
           toggleMenu={toggleMenu}
           cartData={cartData}
+          form={form}
+          setForm={setForm}
+          orderObj={orderObj}
+          setOrderObj={setOrderObj}
         />
         <Routes>
           <Route
@@ -98,6 +119,8 @@ function App() {
                 menuOpen={menuOpen}
                 handleAddToCart={handleAddToCart}
                 products={products}
+                changed={changed}
+                setChanged={setChanged}
               />
             }
           />

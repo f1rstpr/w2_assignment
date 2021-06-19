@@ -62,9 +62,21 @@ class Products {
             throw new BadRequestError("There was no order.");
         }
 
-        // const newCart = {
-            // ...order,
-        // };
+        const requiredFields = ["name", "email"];
+        requiredFields.forEach((field) => {
+            if (!order[field]) {
+                throw new BadRequestError(
+                    `${field} wasn't found in the request.body`
+                );
+            }
+        });
+        return order;
+        // const newOrder = {
+
+        // }
+
+        // storage.get("cart").push(newOrder).write();
+        // return newOrder;
     }
 
     static order(obj) {

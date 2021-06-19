@@ -44,6 +44,17 @@ router.get("/cart", async (req, res, next) => {
     }
 });
 
+router.post("/newOrder", async (req, res, next) => {
+    try {
+        const orderObj = req.body;
+        console.log(orderObj);
+        const order = await Products.orderSubmission(orderObj);
+        res.status(200).json({ order: order });
+    } catch (e) {
+        next(e);
+    }
+});
+
 // router.get( )
 
 // {
@@ -56,10 +67,5 @@ router.get("/cart", async (req, res, next) => {
 //         "email": "user@user.com"
 //     }
 // }
-
-router.post("/", (req, res, next) => {
-    const foo = req.body;
-    res.status(200).json({ purchase: Products.order(foo) });
-});
 
 module.exports = router;

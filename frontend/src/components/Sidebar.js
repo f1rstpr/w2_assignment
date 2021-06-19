@@ -1,38 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import axios from "axios";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
-export default function Sidebar({ menuOpen, toggleMenu, cartData }) {
-    console.log(cartData.cart);
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-    });
+export default function Sidebar({
+    menuOpen,
+    toggleMenu,
+    cartData,
+    form,
+    setForm,
+    orderObj,
+    setOrderObj,
+}) {
+    console.log(cartData.cart, ": inside Sidebar.js");
 
     const handleInputChange = (e) => {
-        console.log(e.target);
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleOnSubmit = async () => {
-        // const res = await axios.post(`${}`)
-        // const newUser = {
-        //     form.name,
-        //     form.email
-        // }
-        // setForm({
-        //     name: "",
-        //     email: ""
-        // })
-    };
+        const res = await axios.post("http://localhost:3001/store/newOrder", {
+            order: orderObj,
+        });
 
+        setForm({
+            name: "",
+            email: "",
+        });
+    };
+    console.log(`CART OBJ`, orderObj);
     // {/*<div id="sidebar_close"></div>*/}
     return (
         <div
             className="sidebar"
             style={menuOpen ? { width: "25%" } : { width: "1.5%" }}
-            onClick={toggleMenu}
+            // onClick={toggleMenu}
         >
             {menuOpen ? (
                 <div>

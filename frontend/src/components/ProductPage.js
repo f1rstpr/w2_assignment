@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import CardComponent from "./CardComponent";
 
-export default function ProductPage({ menuOpen, handleAddToCart }) {
+export default function ProductPage({ menuOpen, handleAddToCart, changed, setChanged }) {
     const { productId } = useParams();
     const [product, setProduct] = useState({});
 
@@ -33,6 +33,8 @@ export default function ProductPage({ menuOpen, handleAddToCart }) {
                     handleAddToCart={handleAddToCart}
                     isOnProductPage={true}
                     menuOpen={menuOpen}
+                    changed={changed}
+                    setChanged={setChanged}
                 />
             </div>
         </div>

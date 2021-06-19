@@ -19,6 +19,7 @@ export default function RightSidePage({ menuOpen, toggleMenu, products }) {
       id="right"
       style={menuOpen ? { marginLeft: "30%" } : { marginLeft: "0%" }}
     >
+      <button onClick={toggleMenu}> hi </button>
       <div id="right_div1">
         <div id="items_div">
           <Product

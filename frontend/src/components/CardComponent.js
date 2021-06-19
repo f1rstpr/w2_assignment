@@ -11,7 +11,13 @@ import Typography from "@material-ui/core/Typography";
 import HomeIcon from "@material-ui/icons/Home";
 import Grid from "@material-ui/core/Grid";
 
-export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
+export default function CardComponent({
+  p,
+  handleAddToCart,
+  isOnProductPage,
+  changed,
+  setChanged,
+}) {
   const useStyles = makeStyles({
     root: {
       maxWidth: 350,
@@ -24,7 +30,12 @@ export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
   });
 
   const classes = useStyles();
-  // className={classes.root}
+
+  const handleClick = () => {
+    handleAddToCart(p);
+    setChanged((c) => c + 1);
+  };
+
   return (
     <Card className={isOnProductPage ? classes.biggerStyle : classes.root}>
       <CardActionArea>
@@ -58,11 +69,7 @@ export default function CardComponent({ p, handleAddToCart, isOnProductPage }) {
           </Button>
         ) : (
           <Grid container direction="row" alignItems="center">
-            <Button
-              size="small"
-              color="primary"
-              onClick={() => handleAddToCart(p)}
-            >
+            <Button size="small" color="primary" onClick={handleClick}>
               Add to Cart
             </Button>
             <Link to="/">
