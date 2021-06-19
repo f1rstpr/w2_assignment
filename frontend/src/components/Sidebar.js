@@ -12,7 +12,8 @@ export default function Sidebar({
     orderObj,
     setOrderObj,
 }) {
-    // console.log(cartData.cart, ": inside Sidebar.js");
+    const [latestCartEntry, getLastestCartEntry] = useState({});
+
     const handleInputChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -23,13 +24,24 @@ export default function Sidebar({
             order: orderObj,
         });
         console.log("SUBMITTED NEW ORDER: >>>>>>>>>>>>>>>>>>", res.data);
+
+        const lol = res.data.order.order.email;
+
+        const cartItems = res.data.order.order.items.cartItem;
+
+
+        for (const [key, val] of Object.entries(cartItems)) {
+            console.log(key, val.quantity);
+        }
+
+        console.log(`Email is: ${lol}`);
+
         setForm({
             name: "",
             email: "",
         });
     };
 
-    console.log(`CART OBJ`, orderObj);
     // {/*<div id="sidebar_close"></div>*/}
     return (
         <div
