@@ -13,6 +13,9 @@ export default function Sidebar({
     setOrderObj,
 }) {
     const [latestCartEntry, getLastestCartEntry] = useState({});
+    const [hasPurchased, setHasPurchased] = useState(false);
+    const [email, setEmail] = useState("");
+    const [userBought, setUserBought] = useState([]);
 
     const handleInputChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -26,16 +29,19 @@ export default function Sidebar({
         console.log("SUBMITTED NEW ORDER: >>>>>>>>>>>>>>>>>>", res.data);
 
         const lol = res.data.order.order.email;
+        setEmail(lol);
 
         const cartItems = res.data.order.order.items.cartItem;
 
-
         for (const [key, val] of Object.entries(cartItems)) {
-            console.log(key, val.quantity);
+            setUserBought((prev) => [
+                ...prev,
+                { item: key, quantity: val.quantity },
+            ]);
         }
 
         console.log(`Email is: ${lol}`);
-
+        setHasPurchased(true);
         setForm({
             name: "",
             email: "",
@@ -43,6 +49,7 @@ export default function Sidebar({
     };
 
     // {/*<div id="sidebar_close"></div>*/}
+    console.log(userBought);
     return (
         <div
             className="sidebar"
@@ -83,24 +90,35 @@ export default function Sidebar({
                         </tbody>
                     </table>
                     TOTAL COST: {cartData.totalCost}
-                    <div>
-                        <input
-                            name="name"
-                            type="text"
-                            placeholder="name"
-                            value={form.name}
-                            onChange={(e) => handleInputChange(e)}
-                        />
+                    {!hasPurchased ? (
+                        <div>
+                            <div>
+                                <input
+                                    name="name"
+                                    type="text"
+                                    placeholder="name"
+                                    value={form.name}
+                                    onChange={(e) => handleInputChange(e)}
+                                />
 
-                        <input
-                            name="email"
-                            type="text"
-                            placeholder="email"
-                            value={form.email}
-                            onChange={(e) => handleInputChange(e)}
-                        />
-                    </div>
-                    <button onClick={handleOnSubmit}> submit </button>
+                                <input
+                                    name="email"
+                                    type="text"
+                                    placeholder="email"
+                                    value={form.email}
+                                    onChange={(e) => handleInputChange(e)}
+                                />
+                            </div>
+                            <button onClick={handleOnSubmit}> submit </button>
+                        </div>
+                    ) : (
+                        <div>
+                            Thank you for ordering, here is some info about your
+                            order:
+                            <p> Email: {email} </p>
+
+                        </div>
+                    )}
                 </div>
             ) : (
                 <ShoppingCartIcon />
