@@ -55,6 +55,16 @@ router.post("/newOrder", async (req, res, next) => {
     }
 });
 
+router.get("/newOrder", async (req, res, next) => {
+    try {
+        res.status(200).json({
+            mostRecent: await Products.getMostRecentCartEntry(),
+        });
+    } catch (e) {
+        next(e);
+    }
+});
+
 // router.get( )
 
 // {

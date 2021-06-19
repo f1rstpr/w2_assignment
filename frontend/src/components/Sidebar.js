@@ -22,7 +22,7 @@ export default function Sidebar({
         const res = await axios.post("http://localhost:3001/store/newOrder", {
             order: orderObj,
         });
-        console.log(res.data);
+        console.log("SUBMITTED NEW ORDER: >>>>>>>>>>>>>>>>>>", res.data);
         setForm({
             name: "",
             email: "",

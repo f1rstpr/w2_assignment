@@ -62,49 +62,36 @@ class Products {
             throw new BadRequestError("There was no order.");
         }
 
-        const requiredFields = ["name", "email"];
-        requiredFields.forEach((field) => {
-            if (!order[field]) {
-                throw new BadRequestError(
-                    `${field} wasn't found in the request.body`
-                );
-            }
-        });
-        return order;
-        // const newOrder = {
+        // const requiredFields = ["name", "email"];
+        // requiredFields.forEach((field) => {
+        //     if (!order.order[field]) {
+        //         throw new BadRequestError(
+        //             `${field} wasn't found in the request.body`
+        //         );
+        //     }
+        // });
+        if (!order.order["email"]) {
+            throw new BadRequestError("email not found in the request.body");
+        }
 
-        // }
+        const carts = await Products.getCart();
+        const cartId = carts.length + 1;
+        const newOrder = { id: cartId, ...order };
 
-        // storage.get("cart").push(newOrder).write();
-        // return newOrder;
+        storage.get("cart").push(newOrder).write();
+
+        return newOrder;
     }
 
-    static order(obj) {
-        //     if (!("cart" in obj)) {
-        //         throw new BadRequestError("Cart key is not in request.body");
-        //     }
-        //     if (!("userInfo" in obj)) {
-        //         throw new BadRequestError("userInfo key is not in request.body");
-        //     }
-        //     let totalCost = 0;
-        //     // key is the item
-        //     // obj.cart[key] is the value
-        //     for (const key in obj.cart) {
-        //         for (const p of products) {
-        //             if (p.name === key) {
-        //                 // if our cur product has the name same as our cur item in the cart, increment total cost
-        //                 totalCost += parseFloat(p.price) * obj.cart[key];
-        //             }
-        //         }
-        //     }
-        //     return {
-        //         name: obj.userInfo.name,
-        //         email: obj.userInfo.email,
-        //         totalCost: totalCost.toFixed(2),
-        //     };
-        //     // totalCost +=
-        //     // return {totalCost: }
-        // }
+    static async getMostRecentCartEntry() {
+        const carts = await Products.getCart();
+        const lastCartId = carts.length;
+
+        const lastEntryOfCart = storage
+            .get("cart")
+            .find({ id: Number(lastCartId) })
+            .value();
+        return lastEntryOfCart;
     }
 }
 

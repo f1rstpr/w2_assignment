@@ -145,5 +145,38 @@
       "price": "5.00"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": 1,
+      "order": {
+        "name": "hi@gmail.com",
+        "email": "test"
+      }
+    },
+    {
+      "id": 2,
+      "order": {
+        "name": "hi@gmail.com",
+        "email": "test"
+      }
+    },
+    {
+      "id": 3,
+      "order": {
+        "email": "hi@gmail.com",
+        "items": {
+          "cartItem": {
+            "burger": {
+              "quantity": 1,
+              "unitPrice": 20
+            },
+            "fries": {
+              "quantity": 1,
+              "unitPrice": 7
+            }
+          }
+        }
+      }
+    }
+  ]
 }
