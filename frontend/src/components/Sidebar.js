@@ -12,22 +12,23 @@ export default function Sidebar({
     orderObj,
     setOrderObj,
 }) {
-    console.log(cartData.cart, ": inside Sidebar.js");
-
+    // console.log(cartData.cart, ": inside Sidebar.js");
     const handleInputChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleOnSubmit = async () => {
+        console.log(orderObj);
         const res = await axios.post("http://localhost:3001/store/newOrder", {
             order: orderObj,
         });
-
+        console.log(res.data);
         setForm({
             name: "",
             email: "",
         });
     };
+
     console.log(`CART OBJ`, orderObj);
     // {/*<div id="sidebar_close"></div>*/}
     return (

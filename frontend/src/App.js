@@ -39,7 +39,7 @@ function App() {
     };
     fetchCart();
   }, [cart]);
-
+  console.log(`cart`, cart);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -80,15 +80,12 @@ function App() {
   const [changed, setChanged] = useState(1);
 
   useEffect(() => {
-    console.log(changed);
     setOrderObj((prevState) => ({
       ...prevState,
       email: form.email,
       items: { ...prevState.items, cartItem: cartData.cart },
     }));
-  }, [form, changed]);
-  console.log(cartData.cart, "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<app.js");
-  console.log(changed);
+  }, [form.email, cartData.cart]);
   return (
     <div>
       <BrowserRouter>

@@ -8,7 +8,7 @@ export default function RightSidePage({ menuOpen, toggleMenu, products }) {
     setFilteredSearch(newText);
   };
 
-  console.log(products);
+  // console.log(products);
   const filteredProducts =
     filteredSearch.length === 0
       ? products

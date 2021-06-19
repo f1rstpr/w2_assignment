@@ -33,7 +33,7 @@ export default function CardComponent({
 
   const handleClick = () => {
     handleAddToCart(p);
-    setChanged((c) => c + 1);
+    // setChanged((c) => c + 1);
   };
 
   return (
