@@ -1,8 +1,8 @@
 ## Week 2 Assignment: Student Store
 
-Submitted by: **NAME**
+Submitted by: Andrew Lee
 
-Deployed Application (optional): [Student Store Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): 
 
 ### Application Features
 
@@ -34,11 +34,13 @@ Deployed Application (optional): [Student Store Deployed Site](ADD_LINK_HERE)
 
 ![gif3](https://github.com/f1rstpr/w2_assignment/blob/master/gifs/walkthrough3.gif)
 
+![requests](https://github.com/f1rstpr/w2_assignment/blob/master/gifs/requests.gif)
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Yes, the labs were extremely helpful for this assignment. In the first lab, we learned how to make routes, models, and error handling for our api. In the second and third labs, we learn how to use React in order to implement a user interface and a way to mimic a database using a json file. Additonally, the videos served as a great resource for this week. However, I only felt moderately prepared for the stretch features. One part I found challenging was the checkout form, as I had to use a nested ternary to correctly render what was shown on the sidebar, which confused me at first.
+Yes, the labs were extremely helpful for this assignment. In the first lab, we learned how to make routes, models, and error handling for our api. In the second and third labs, we learn how to use React in order to implement a user interface and a way to mimic a database using a json file. Additonally, the videos served as a great resource for this week. However, I did not feel very prepared for the stretch features. I also struggled with the parts where we had to set state using call back functions with the destructuring syntax, alongside with making sure our data is synced throughout all areas of the page with the use of useEffect.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
@@ -46,7 +48,7 @@ I would learn more about Material UI or perhaps another popular front end design
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-What went well was that I was able to learn about Express, Node, and React. What didn't go so well was trying to understand the whole process, since we have only been learning it for a week. Nevertheless, I am proud of the progress I haev made. During the presentations, some peers mentioned that they used Figma for their designs, which was impressive. Next time, I would like to try to create a design on Figma. 
+What went well was that I was able to learn about Express, Node, and React. What didn't go so well was trying to understand the whole process, since we have only been learning it for a week. I also made a lot of syntax errors which took time to get used to. Nevertheless, I am proud of the progress I haev made. During the presentations, some peers mentioned that they used Figma for their designs, which was impressive. Next time, I would like to try to create a design on Figma. 
 
 ### Open-source libraries used
 
