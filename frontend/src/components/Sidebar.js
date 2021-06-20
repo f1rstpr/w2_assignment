@@ -5,6 +5,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -68,14 +69,10 @@ export default function Sidebar({
         setCartData({});
     };
 
-    // {/*<div id="sidebar_close"></div>*/}
-    console.log(userBought);
-
     return (
         <div
             className="sidebar"
             style={menuOpen ? { width: "25%" } : { width: "0%" }}
-            // onClick={toggleMenu}
         >
             {menuOpen ? (
                 <div>
@@ -84,8 +81,8 @@ export default function Sidebar({
                             <tr id="tr">
                                 <th> Name </th>
                                 <th> Quantity</th>
-                                <th> Unit Price </th>
-                                <th> Cost </th>
+                                <th> Unit Price ($)</th>
+                                <th> Cost ($) </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -98,62 +95,87 @@ export default function Sidebar({
                                                 {cartData.cart[item].quantity}
                                             </td>
                                             <td>
-                                                {cartData.cart[item].unitPrice}
+                                                {cartData.cart[
+                                                    item
+                                                ].unitPrice.toFixed(2)}
                                             </td>
                                             <td>
-                                                {cartData.cart[item].quantity *
+                                                {(
                                                     cartData.cart[item]
-                                                        .unitPrice}
+                                                        .quantity *
+                                                    cartData.cart[item]
+                                                        .unitPrice
+                                                ).toFixed(2)}
                                             </td>
                                         </tr>
                                     );
                                 })}
                         </tbody>
                     </table>
-                    <div
-                        style={{ display: "flex", justifyContent: "flex-end" }}
-                    >
-                        <h2>TOTAL COST: {cartData.totalCost}</h2>
+                    <div style={{ margin: "20px" }}>
+                        <h2>TOTAL COST: ${cartData.totalCost}</h2>
                     </div>
                     {!hasPurchased ? (
-                        <div>
-                            <form
-                                className={classes.root}
-                                noValidate
-                                autoComplete="off"
-                            >
-                                <TextField
-                                    name="name"
-                                    type="text"
-                                    label="name"
-                                    value={form.name}
-                                    onChange={(e) => handleInputChange(e)}
-                                />
+                        <div
+                            style={{
+                                padding: "20px",
+                            }}
+                        >
+                            <div>
+                                <h3> Enter your details </h3>
+                                <form
+                                    className={classes.root}
+                                    noValidate
+                                    autoComplete="off"
+                                >
+                                    <TextField
+                                        name="name"
+                                        type="text"
+                                        label="name"
+                                        value={form.name}
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
 
-                                <TextField
-                                    name="email"
-                                    type="text"
-                                    placeholder="email"
-                                    value={form.email}
-                                    onChange={(e) => handleInputChange(e)}
-                                />
-                            </form>
-                            <button onClick={handleOnSubmit}> submit </button>
+                                    <TextField
+                                        name="email"
+                                        type="text"
+                                        placeholder="email"
+                                        value={form.email}
+                                        onChange={(e) => handleInputChange(e)}
+                                    />
+                                </form>
+                            </div>
+                            <Button
+                                id="buttonMui"
+                                variant="contained"
+                                color="primary"
+                                onClick={handleOnSubmit}
+                            >
+                                Submit
+                            </Button>
                         </div>
                     ) : (
-                        <div>
+                        <div style={{ display: "grid", placeItems: "center" }}>
                             Thank you for ordering, here is some info about your
                             order:
-                            <p> Email: {email} </p>
+                            <p>
+                                {" "}
+                                <b> Email </b> : {email}{" "}
+                            </p>
                             <p> {email} bought: </p>
                             {userBought.map((product) => (
                                 <p>
-                                    {product.quantity} of {product.item}
+                                    <b> {product.quantity} </b> of{" "}
+                                    <b> {product.item} </b>
                                 </p>
                             ))}
-                            <button onClick={handleShopAgainClick}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={handleShopAgainClick}
+                            >
                                 Shop again
-                            </button>
+                            </Button>
                         </div>
                     )}
                 </div>
