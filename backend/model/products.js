@@ -52,16 +52,17 @@ class Products {
             throw new BadRequestError("There was no order.");
         }
 
-        // const requiredFields = ["name", "email"];
-        // requiredFields.forEach((field) => {
-        //     if (!order.order[field]) {
-        //         throw new BadRequestError(
-        //             `${field} wasn't found in the request.body`
-        //         );
-        //     }
-        // });
-        if (!order.order["email"]) {
-            throw new BadRequestError("email not found in the request.body");
+        const requiredFields = ["name", "email"];
+        requiredFields.forEach((field) => {
+            if (!order.order[field]) {
+                throw new BadRequestError(
+                    `${field} wasn't found in the request.body`
+                );
+            }
+        });
+        console.log(order.order.items.cartItem);
+        if (Object.keys(order.order.items.cartItem).length === 0) {
+            throw new BadRequestError("There was no cart items.");
         }
 
         const carts = await Products.getCart();

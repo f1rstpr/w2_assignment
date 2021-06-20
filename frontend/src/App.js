@@ -84,9 +84,10 @@ function App() {
     setOrderObj((prevState) => ({
       ...prevState,
       email: form.email,
+      name: form.name,
       items: { ...prevState.items, cartItem: cartData.cart },
     }));
-  }, [form.email, cartData.cart]);
+  }, [form, cartData.cart]);
   const [filteredSearch, setFilteredSearch] = useState("");
 
   const handleOnInputChange = (newText) => {
