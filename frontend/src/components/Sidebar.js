@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./Sidebar.css";
 import axios from "axios";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,7 +27,6 @@ export default function Sidebar({
 }) {
     const classes = useStyles();
 
-    const [latestCartEntry, getLastestCartEntry] = useState({});
     const [hasPurchased, setHasPurchased] = useState(false);
     const [email, setEmail] = useState("");
     const [userBought, setUserBought] = useState([]);

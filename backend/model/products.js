@@ -35,8 +35,6 @@ class Products {
         }
 
         return {
-            // name: cartObj.userInfo.name,
-            // email: cartObj.userInfo.email,
             totalCost: totalCost.toFixed(2),
             cart: cart,
         };
@@ -88,13 +86,3 @@ class Products {
 
 module.exports = Products;
 
-// {
-//   "cart": {
-//         "Bike": 2,
-//         "Scooter": 3
-//     },
-//     "userInfo": {
-//         "name": "SampleUser",
-//         "email": "user@user.com"
-//     }
-// }

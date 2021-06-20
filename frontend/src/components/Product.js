@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
 import CardComponent from "./CardComponent";
-import Searchbar from "./Searchbar";
 
 export default function Product({
     products,

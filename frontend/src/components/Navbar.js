@@ -16,9 +16,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Grid from "@material-ui/core/Grid";
 import HomeIcon from "@material-ui/icons/Home";
-import Searchbar from "./Searchbar";
+
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -183,7 +182,7 @@ export default function Navbar({
                         color="inherit"
                         style={{ marginRight: "50px" }}
                     >
-                        <Link to="/" class="link">
+                        <Link to="/" className="link">
                             <HomeIcon />
                         </Link>
                     </IconButton>

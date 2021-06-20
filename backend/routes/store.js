@@ -65,17 +65,6 @@ router.get("/newOrder", async (req, res, next) => {
     }
 });
 
-// router.get( )
 
-// {
-//   "cart": {
-//         "Bike": 2,
-//         "Scooter": 3
-//     },
-//     "userInfo": {
-//         "name": "SampleUser",
-//         "email": "user@user.com"
-//     }
-// }
 
 module.exports = router;
