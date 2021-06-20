@@ -93,6 +93,7 @@ function App() {
           setForm={setForm}
           orderObj={orderObj}
           setOrderObj={setOrderObj}
+          setCart={setCart}
         />
         <Navbar
           toggleMenu={toggleMenu}

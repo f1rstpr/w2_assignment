@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
 import axios from "axios";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -24,6 +24,7 @@ export default function Sidebar({
     setForm,
     orderObj,
     setOrderObj,
+    setCart,
 }) {
     const classes = useStyles();
 
@@ -64,7 +65,9 @@ export default function Sidebar({
 
     const handleShopAgainClick = () => {
         setHasPurchased(false);
+        setUserBought([]);
         setCartData({});
+        setCart({});
     };
 
     return (
