@@ -60,4 +60,4 @@ https://material-ui.com/
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
 
-Shout out to all my mentors, peers, and the instructors that I have worked with this week.  
+Shout out to all my mentors, peers, and the instructors that I have worked with this week. Another shoutout to Matt for the react review lesson.
