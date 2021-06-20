@@ -2,16 +2,31 @@ import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import axios from "axios";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        "& > *": {
+            margin: theme.spacing(1),
+            width: "25ch",
+        },
+    },
+}));
 
 export default function Sidebar({
     menuOpen,
     toggleMenu,
     cartData,
+    setCartData,
     form,
     setForm,
     orderObj,
     setOrderObj,
 }) {
+    const classes = useStyles();
+
     const [latestCartEntry, getLastestCartEntry] = useState({});
     const [hasPurchased, setHasPurchased] = useState(false);
     const [email, setEmail] = useState("");
@@ -48,12 +63,18 @@ export default function Sidebar({
         });
     };
 
+    const handleShopAgainClick = () => {
+        setHasPurchased(false);
+        setCartData({});
+    };
+
     // {/*<div id="sidebar_close"></div>*/}
     console.log(userBought);
+
     return (
         <div
             className="sidebar"
-            style={menuOpen ? { width: "25%" } : { width: "1.5%" }}
+            style={menuOpen ? { width: "25%" } : { width: "0%" }}
             // onClick={toggleMenu}
         >
             {menuOpen ? (
@@ -89,26 +110,34 @@ export default function Sidebar({
                                 })}
                         </tbody>
                     </table>
-                    TOTAL COST: {cartData.totalCost}
+                    <div
+                        style={{ display: "flex", justifyContent: "flex-end" }}
+                    >
+                        <h2>TOTAL COST: {cartData.totalCost}</h2>
+                    </div>
                     {!hasPurchased ? (
                         <div>
-                            <div>
-                                <input
+                            <form
+                                className={classes.root}
+                                noValidate
+                                autoComplete="off"
+                            >
+                                <TextField
                                     name="name"
                                     type="text"
-                                    placeholder="name"
+                                    label="name"
                                     value={form.name}
                                     onChange={(e) => handleInputChange(e)}
                                 />
 
-                                <input
+                                <TextField
                                     name="email"
                                     type="text"
                                     placeholder="email"
                                     value={form.email}
                                     onChange={(e) => handleInputChange(e)}
                                 />
-                            </div>
+                            </form>
                             <button onClick={handleOnSubmit}> submit </button>
                         </div>
                     ) : (
@@ -116,7 +145,15 @@ export default function Sidebar({
                             Thank you for ordering, here is some info about your
                             order:
                             <p> Email: {email} </p>
-
+                            <p> {email} bought: </p>
+                            {userBought.map((product) => (
+                                <p>
+                                    {product.quantity} of {product.item}
+                                </p>
+                            ))}
+                            <button onClick={handleShopAgainClick}>
+                                Shop again
+                            </button>
                         </div>
                     )}
                 </div>

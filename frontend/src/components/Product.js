@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Product.css";
 import CardComponent from "./CardComponent";
-import Navbar from "./Navbar";
+import Searchbar from "./Searchbar";
 
 export default function Product({
     products,
@@ -13,10 +13,6 @@ export default function Product({
         <div>
             <div style={{ display: "grid", placeItems: "center" }}>
                 <h1> Products </h1>
-                <Navbar
-                    handleOnInputChange={handleOnInputChange}
-                    filteredSearch={filteredSearch}
-                />
             </div>
             <div id="img_wrapper">
                 {products.map((p) => (

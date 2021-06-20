@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Product from "./Product";
 
-export default function RightSidePage({ menuOpen, toggleMenu, products }) {
-  const [filteredSearch, setFilteredSearch] = useState("");
-
-  const handleOnInputChange = (newText) => {
-    setFilteredSearch(newText);
-  };
-
+export default function RightSidePage({
+  menuOpen,
+  toggleMenu,
+  products,
+  filteredSearch,
+  handleOnInputChange,
+}) {
   // console.log(products);
   const filteredProducts =
     filteredSearch.length === 0
@@ -19,7 +19,6 @@ export default function RightSidePage({ menuOpen, toggleMenu, products }) {
       id="right"
       style={menuOpen ? { marginLeft: "30%" } : { marginLeft: "0%" }}
     >
-      <button onClick={toggleMenu}> hi </button>
       <div id="right_div1">
         <div id="items_div">
           <Product

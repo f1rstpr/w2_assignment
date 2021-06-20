@@ -8,6 +8,7 @@ import Sidebar from "./components/Sidebar";
 import Product from "./components/Product";
 import ProductPage from "./components/ProductPage";
 import RightSidePage from "./components/RightSidePage";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ function App() {
     };
     fetchCart();
   }, [cart]);
-  console.log(`cart`, cart);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -86,6 +87,12 @@ function App() {
       items: { ...prevState.items, cartItem: cartData.cart },
     }));
   }, [form.email, cartData.cart]);
+  const [filteredSearch, setFilteredSearch] = useState("");
+
+  const handleOnInputChange = (newText) => {
+    setFilteredSearch(newText);
+  };
+
   return (
     <div>
       <BrowserRouter>
@@ -93,10 +100,16 @@ function App() {
           menuOpen={menuOpen}
           toggleMenu={toggleMenu}
           cartData={cartData}
+          setCartData={setCartData}
           form={form}
           setForm={setForm}
           orderObj={orderObj}
           setOrderObj={setOrderObj}
+        />
+        <Navbar
+          toggleMenu={toggleMenu}
+          handleOnInputChange={handleOnInputChange}
+          filteredSearch={filteredSearch}
         />
         <Routes>
           <Route
@@ -106,6 +119,8 @@ function App() {
                 products={products}
                 menuOpen={menuOpen}
                 toggleMenu={toggleMenu}
+                filteredSearch={filteredSearch}
+                handleOnInputChange={handleOnInputChange}
               />
             }
           />
@@ -128,4 +143,3 @@ function App() {
 }
 
 export default App;
-

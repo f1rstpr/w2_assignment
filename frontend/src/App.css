@@ -7,8 +7,8 @@
   height: 100%;
   position: fixed;
   overflow: hidden;
-  padding-top: 50px;
-  border: 10px solid black;
+  padding-top: 80px;
+  /*border: 10px solid black;*/
 }
 
 .sidebar #sidebar_close {
@@ -21,14 +21,9 @@
 
 #right #right_div1 #sidebar_open {
   border-radius: 25px;
-  border: 2px solid black;
   font-size: 15px;
   cursor: pointer;
   padding: 10px 15px;
-}
-
-#right #right_div1 #items_div {
-  border: 1px solid black;
 }
 
 #right {
@@ -43,16 +38,13 @@
 #ProductPage_item_wrapper #item {
   display: flex;
   flex-direction: column;
-  border: 1px solid cyan;
 }
 
 #ProductPage_item_wrapper #item #item_img {
   width: 500px;
-  border: 5px solid black;
 }
 
 #ProductPage_item_wrapper #item #item_info {
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
@@ -65,4 +57,9 @@
 
 .MuiGrid-container {
   justify-content: space-between;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }
