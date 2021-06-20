@@ -20,16 +20,6 @@ class Products {
             throw new BadRequestError("cart key not in request.body");
         }
 
-        // if (!("userInfo" in cartObj)) {
-        //     throw new BadRequestError("userInfo key not in request.body");
-        // }
-
-        // if (!("name" in cartObj.userInfo) || !("email" in cartObj.userInfo)) {
-        //     throw new BadRequestError(
-        //         "name or email not in request.body.userInfo"
-        //     );
-        // }
-
         const products = await Products.getProducts();
         const cart = cartObj.cart;
 
