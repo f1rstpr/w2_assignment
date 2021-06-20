@@ -20,129 +20,66 @@
     },
     {
       "id": 3,
-      "name": "Bike",
-      "category": "accessories",
-      "image": "https://api.creativecommons.engineering/v1/thumbs/f446bc6a-9c36-43bc-98ca-85f215616aa6",
-      "source": "https://api.creativecommons.engineering/v1/thumbs/f446bc6a-9c36-43bc-98ca-85f215616aa6",
-      "description": "desc",
+      "name": "Red Hot Chili Peppers",
+      "category": "food",
+      "image": "https://images.unsplash.com/photo-1583506522440-b2639ef4c1d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVkJTIwcGVwcGVyc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "source": "https://en.wikipedia.org/wiki/Chili_pepper",
+      "description": "The chili pepper (also chile, chile pepper, chilli pepper, or chilli[3]), from Nahuatl chīlli (Nahuatl pronunciation: [ˈt͡ʃiːlːi] (About this soundlisten)), is the berry-fruit of plants from the genus Capsicum which are members of the nightshade family, Solanaceae.[4] Chili peppers are widely used in many cuisines as a spice to add pungent 'heat' to dishes. Capsaicin and related compounds known as capsaicinoids are the substances giving chili peppers their intensity when ingested or applied topically.",
       "price": "10.00"
     },
     {
       "id": 4,
-      "name": "Scooter",
-      "category": "accessories",
-      "image": "https://live.staticflickr.com/3257/2891128534_53cd06bb31.jpg",
-      "source": "https://live.staticflickr.com/3257/2891128534_53cd06bb31.jpg",
-      "description": "desc",
-      "price": "3.00"
+      "name": "Sunflower",
+      "category": "plants",
+      "image": "https://images.unsplash.com/photo-1551945326-df678a97c3af?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VuZmxvd2VyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "source": "https://en.wikipedia.org/wiki/Helianthus",
+      "description": "Known as a song featured in the movie Spider-Man: Into the Spider-Verse, the common names sunflower and common sunflower typically refer to the popular annual species Helianthus annuus, whose round flower heads in combination with the ligules look like the sun",
+      "price": "2.15"
     },
     {
       "id": 5,
-      "name": "M&M",
-      "category": "food",
-      "image": "https://live.staticflickr.com/6033/6221031093_0fcd795f4b_b.jpg",
-      "source": "https://search.creativecommons.org/photos/0bd02149-70f3-4733-90a6-758df0d91667",
-      "description": "yoo",
-      "price": "5.00"
+      "name": "Maroon 5",
+      "category": "misc",
+      "image": "https://images.unsplash.com/photo-1613245365136-9275da74ebb8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bWFyb29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "source": "https://en.wikipedia.org/wiki/Maroon",
+      "description": "Maroon (US/UK /məˈruːn/ mə-ROON,[2] Australia /məˈroʊn/ mə-ROHN[3]) is a brownish crimson color that takes its name from the French word marron, or chestnut.[4] 'Marron' is also one of the French translations for 'brown'.",
+      "price": "3.50"
     },
     {
       "id": 6,
-      "name": "burger",
-      "category": "food",
-      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "20.00"
+      "name": "AC/DC",
+      "category": "electronics",
+      "image": "https://images.unsplash.com/photo-1586339393660-ea6e0803bb54?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+      "source": "https://en.wikipedia.org/wiki/Alternating_current",
+      "description": "Alternating current (AC) is an electric current which periodically reverses direction and changes its magnitude continuously with time in contrast to direct current (DC) which flows only in one direction.",
+      "price": "7.99"
     },
     {
       "id": 7,
-      "name": "fries",
-      "category": "food",
-      "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZnJpZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZnJpZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "7.00"
+      "name": "The Beginners Guide to Programming",
+      "category": "Book",
+      "image": "https://media.discordapp.net/attachments/856056227897016343/856056242521767976/unknown.png",
+      "source": "https://wiki.python.org/moin/BeginnersGuide",
+      "description": "New to programming? Python is free and easy to learn if you know where to start! This guide will help you to get started quickly.",
+      "price": "15.99"
     },
     {
       "id": 8,
-      "name": "green drink",
-      "category": "food",
-      "image": "https://images.unsplash.com/photo-1584587727565-a486d45d58b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c21vb3RoaWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1584587727565-a486d45d58b4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c21vb3RoaWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "3.00"
+      "name": "Panic At The Disco",
+      "category": "misc",
+      "image": "https://images.unsplash.com/photo-1604208485423-f19bc2aaae2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+      "source": "https://en.wikipedia.org/wiki/Panic!_at_the_Disco",
+      "description": "Panic! at the Disco is the solo project[3] of American musician Brendon Urie.",
+      "price": "99999999.99"
     },
     {
       "id": 9,
-      "name": "pink drink",
+      "name": "In-N-Out Burgers and fries",
       "category": "food",
-      "image": "https://images.unsplash.com/photo-1580624799293-d9c433686669?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHNtb290aGllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1580624799293-d9c433686669?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHNtb290aGllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "15.00"
-    },
-    {
-      "id": 10,
-      "name": "yellow drink",
-      "category": "food",
-      "image": "https://images.unsplash.com/photo-1575159240102-4331f59433ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fHNtb290aGllfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1575159240102-4331f59433ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fHNtb290aGllfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "5.00"
-    },
-    {
-      "id": 11,
-      "name": "red drink",
-      "category": "food",
-      "image": "https://images.unsplash.com/photo-1582885225026-fd83adcca406?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fHNtb290aGllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1582885225026-fd83adcca406?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fHNtb290aGllfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "5.00"
-    },
-    {
-      "id": 12,
-      "name": "cruiseboard",
-      "category": "food",
-      "image": "https://images.unsplash.com/photo-1531565637446-32307b194362?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2thdGVib2FyZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "source": "https://images.unsplash.com/photo-1531565637446-32307b194362?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2thdGVib2FyZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "yoo",
-      "price": "5.00"
-    },
-    {
-      "id": 13,
-      "name": "M&M",
-      "category": "food",
-      "image": "https://live.staticflickr.com/6033/6221031093_0fcd795f4b_b.jpg",
-      "source": "https://search.creativecommons.org/photos/0bd02149-70f3-4733-90a6-758df0d91667",
-      "description": "yoo",
-      "price": "5.00"
-    },
-    {
-      "id": 14,
-      "name": "M&M",
-      "category": "food",
-      "image": "https://live.staticflickr.com/6033/6221031093_0fcd795f4b_b.jpg",
-      "source": "https://search.creativecommons.org/photos/0bd02149-70f3-4733-90a6-758df0d91667",
-      "description": "yoo",
-      "price": "5.00"
-    },
-    {
-      "id": 15,
-      "name": "M&M",
-      "category": "food",
-      "image": "https://live.staticflickr.com/6033/6221031093_0fcd795f4b_b.jpg",
-      "source": "https://search.creativecommons.org/photos/0bd02149-70f3-4733-90a6-758df0d91667",
-      "description": "yoo",
-      "price": "5.00"
-    },
-    {
-      "id": 16,
-      "name": "M&M",
-      "category": "food",
-      "image": "https://live.staticflickr.com/6033/6221031093_0fcd795f4b_b.jpg",
-      "source": "https://search.creativecommons.org/photos/0bd02149-70f3-4733-90a6-758df0d91667",
-      "description": "yoo",
-      "price": "5.00"
+      "image": "https://images.unsplash.com/photo-1517434324-1db605ff03c7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW4lMjBuJTIwb3V0JTIwYnVyZ2VyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "source": "https://en.wikipedia.org/wiki/In-N-Out_Burger",
+      "description": "In-N-Out Burger is an American regional chain of fast food restaurants with locations primarily in California and the Southwest.",
+      "price": "5.99"
     }
   ],
   "cart": [
